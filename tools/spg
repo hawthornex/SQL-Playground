@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cmd=${1:-help}
+case "$cmd" in
+  new)
+    id=$(printf "%03d" ${2:-})
+    [ -z "${2:-}" ] && { echo "usage: spg new <id>"; exit 1; }
+    file="challenges/${id}_draft.md"
+    [ -e "$file" ] && { echo "exists: $file"; exit 1; }
+    cat > "$file" <<EOF
+Title: TODO
+
+Dataset
+- TODO
+
+Tasks
+- TODO
+
+Notes
+- TODO
+EOF
+    echo "created $file" ;;
+  *) echo "usage: spg new <id>" ;;
+esac
+
