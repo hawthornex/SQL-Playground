@@ -13,6 +13,8 @@ Getting Started
 - Inspect dataset schemas in sql/
 - Try writing your own queries and compare with reference solutions
 
+CLI helper
+- Run tools/spg new 004 to draft a new challenge file template.
+
 License
 Personal learning use; adapt as needed.
-
